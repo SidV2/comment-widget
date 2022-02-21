@@ -1,0 +1,40 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.comment_widget_site_wrapper {
+    height: 100%;
+    margin: 0 auto;
+}
+
+.comment_widget_heading_wrapper {
+    text-align: center;
+}
+
+.comment_widget_container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.show_comments_section {
+    margin-top: 10px;
+}
+
+.commentDiv {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.comment_button {
+    margin-top: 10px;
+}
+
+.replyButton {
+    padding-left: 5px;
+}

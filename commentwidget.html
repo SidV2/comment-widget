@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="commentwidget.scss">
+    </head>
+    <body>
+        <div class="comment_widget_site_wrapper">
+            <head> 
+                <title>Comment Widget</title>
+            </head>
+            <div class="comment_widget_heading_wrapper">
+                <h3 class="comment_header">Comment Widget</h3>
+            </div>
+            <div class="comment_widget_container">
+                <div class="comment_text_area">
+                    <textarea id="comment" name="comment-box" rows="4" cols="50"></textarea>
+                    <div class="comment_button">
+                        <button type="submit" onclick="postComment()">Post Comment</button>
+                    </div>
+                </div>
+                
+                <div id="show_comments_section" class="show_comments_section">
+                    <div id="comments_wrapper" class="comments_wrapper">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="commentwidget.js"></script>
+    </body>
+</html>
