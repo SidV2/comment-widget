@@ -9,18 +9,15 @@ function postComment() {
 
 function createComment(commentValue, id) {
     if(id) {
-        const exisitingComment = commentList.findIndex((comment)=> {
-            return comment.id === id;
-        });
-        level = level + 1;
-        commentList[exisitingComment].children.push(
+        const parent = findComment(id, commentList);
+        parent.children.push(
             {
-                id: id + (level),
+                id: id + 1,
                 commentText: commentValue,
-                children: []
+                children: [],
             }
         )
-        showcommentOnDom(commentList[exisitingComment].children);
+        showcommentOnDom(parent.children);
     } else {
         commentList.push(
             {
@@ -72,6 +69,22 @@ function replytoComment(e) {
     postToCommentButton.addEventListener('click', (e) => {
         createComment(document.getElementById("replyCommentTextArea" + id).value, id);
     });
+}
+
+function findComment(id, commentList) {
+    console.log(commentList);
+    for (let comment of commentList) {
+        if (comment.children.length) {
+            const result = this.findComment(id, comment.replies);
+            if (result !== -1) {
+                return result;
+            }
+        }
+        if (comment.id === id) {
+            return comment;
+        }
+    }
+    return -1;
 }
 
 
